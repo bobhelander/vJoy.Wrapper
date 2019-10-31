@@ -15,9 +15,10 @@ vJoy must be installed and at least one virtual joystick configured.
 ```
 using vJoy.Wrapper;
 
-var joystick = new VirtualJoystick(1);   // Aquire vJoy device 1
-joystick.SetJoystickButton(true, 1);     // Press button 1
+var joystick = new VirtualJoystick(1);
+joystick.Aquire();                                  // Aquire vJoy device 1
+joystick.SetJoystickButton(true, 1);                // Press button 1
 joystick.SetJoystickAxis(16000, Axis.HID_USAGE_X);  // Center X axis
-joystick.SetJoystickButton(false, 1);    // Release button 1
+joystick.SetJoystickButton(false, 1);               // Release button 1
 
 ```
