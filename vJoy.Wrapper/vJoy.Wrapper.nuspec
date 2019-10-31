@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$Version$</version>
+    <title>$title$</title>
+    <authors>$Authors$</authors>
+    <licenseUrl>$PackageLicenseExpression$</licenseUrl>
+    <projectUrl>$PackageProjectUrl$</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>$PackageReleaseNotes$</releaseNotes>
+    <copyright>$Copyright$</copyright>
+    <tags>$PackageTags$</tags>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\netstandard2.0\vJoyInterface.dll" target="lib\netstandard2.0" />
+    <file src="bin\$configuration$\netstandard2.0\vJoyInterfaceWrap.dll" target="lib\netstandard2.0" />
+  </files>
+</package>

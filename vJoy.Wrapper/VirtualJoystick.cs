@@ -8,6 +8,9 @@ namespace vJoy.Wrapper
     /// </summary>
     public class VirtualJoystick : IDisposable
     {
+        // Common vJoy Instance
+        static private vJoyInterfaceWrap.vJoy vJoyInstance = new vJoyInterfaceWrap.vJoy();
+
         /// <summary>
         /// Virtual Joystick is Aquired and connected
         /// </summary>
@@ -16,7 +19,7 @@ namespace vJoy.Wrapper
         /// <summary>
         /// Direct access to the vJoy object.
         /// </summary>
-        public vJoyInterfaceWrap.vJoy Joystick { get; }
+        public vJoyInterfaceWrap.vJoy Joystick { get => vJoyInstance; }
 
         /// <summary>
         /// vJoy Joystick number

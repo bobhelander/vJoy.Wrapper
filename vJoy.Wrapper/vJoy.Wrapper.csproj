@@ -3,18 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>C# vJoy wrapper</Description>
+    <Authors>Bob Helander</Authors>
     <PackageProjectUrl>https://github.com/bobhelander/vJoy.Wrapper</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bobhelander/vJoy.Wrapper</RepositoryUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0.2</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.0.5</Version>
     <PackageTags>vJoy</PackageTags>
-    <PackageReleaseNotes>1.0.0.2 Fixing library paths</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.0.2 Fixing library paths
+1.0.0.3 Testing static instance of vJoy</PackageReleaseNotes>
+    <Copyright></Copyright>
+    <PackageLicenseExpression>https://licenses.nuget.org/MIT</PackageLicenseExpression>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="vJoyInterface.dll" />
-    <None Remove="vJoyInterfaceWrap.dll" />
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="vJoyInterfaceWrap">
@@ -23,12 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="lib\netstandard2.0\vJoyInterface.dll">
+    <None Update="vJoyInterface.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="lib\netstandard2.0\vJoyInterfaceWrap.dll">
+    <None Update="vJoyInterfaceWrap.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="nuget pack vJoy.Wrapper.csproj -properties Configuration=Release" />
+  </Target>
 
 </Project>
