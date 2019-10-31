@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>C# vJoy wrapper</Description>
+    <PackageProjectUrl>https://github.com/bobhelander/vJoy.Wrapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bobhelander/vJoy.Wrapper</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.2</Version>
+    <PackageTags>vJoy</PackageTags>
+    <PackageReleaseNotes>1.0.0.2 Fixing library paths</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,18 +17,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="vJoyInterface.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="vJoyInterfaceWrap.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="vJoyInterfaceWrap">
       <HintPath>vJoyInterfaceWrap.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="lib\netstandard2.0\vJoyInterface.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\netstandard2.0\vJoyInterfaceWrap.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
